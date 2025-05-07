@@ -1,11 +1,6 @@
 
-#################################################################################################
-
-# Problem Statement:
 
 ''' Implement Greedy Search Algorithm for Minimum Spanning Tree (MST). '''
-
-#################################################################################################
 
 # Class to represent an Edge in the Undirected Graph
 class Edge:
