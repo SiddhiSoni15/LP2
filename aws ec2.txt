@@ -1,0 +1,21 @@
+open terminal and connect 
+1. sudo su -
+2. yum update -y
+3. yum install -y httpd
+4. systemctl status httpd
+5. mkdir temp1
+6. cd temp1/
+7. wget <zip link from free css>
+8. ls -lrt
+9. unzip carvilla.zip
+10. ls -lrt
+11. cd carvilla-v1.0
+12. ls -lrt
+13. mv * /var/www/html
+14. cd /var/www/html/
+15. ls -lrt
+16. systemctl status httpd
+17. systemctl enable httpd
+18. systemctl start httpd
+19. systemctl status httpd
+ 
