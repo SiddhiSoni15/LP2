@@ -116,3 +116,25 @@ if __name__ == "__main__":
 # Edge 11: 5 6 11
 
 #################################################################################################
+
+# Prim’s Algorithm or Kruskal’s Algorithm are typical greedy solutions for MST.
+
+# Prim’s Algorithm grows the MST by adding the minimum-weight edge to the tree that connects a new vertex.
+
+# Prim's Algorithm is a greedy algorithm for finding the MST. It starts with any arbitrary vertex and grows the MST by adding the edge with the smallest weight that connects a vertex in the MST to a vertex outside the MST.
+
+# python
+# Copy code
+# def prim_mst(graph):
+#     visited = set()
+#     min_edges = [(0, 0)]  # Start with an arbitrary vertex
+#     while min_edges:
+#         weight, vertex = min_edges.pop(0)
+#         if vertex not in visited:
+#             visited.add(vertex)
+#             for neighbor, edge_weight in graph[vertex]:
+#                 if neighbor not in visited:
+#                     min_edges.append((edge_weight, neighbor))
+#     return visited
+# Explanation: This is a classical greedy algorithm that minimizes the total edge weight as the MST grows.
+# Explanation: This algorithm starts with a single node and adds the smallest possible edge to include other vertices, ensuring no cycles.
