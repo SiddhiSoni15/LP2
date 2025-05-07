@@ -1,0 +1,43 @@
+public class FibonacciGenerator {
+    
+    // Method to generate and return the Fibonacci series up to n terms
+    public static List<Integer> generateFibonacci(Integer n) {
+        List<Integer> fibSeries = new List<Integer>();
+        
+        if (n <= 0) {
+            return fibSeries; // return empty list for invalid input
+        }
+        
+        // Initialize the first two terms
+        Integer first = 0;
+        Integer second = 1;
+        
+        fibSeries.add(first);
+        if (n > 1) {
+            fibSeries.add(second);
+        }
+        
+        // Generate remaining terms
+        for (Integer i = 2; i < n; i++) {
+            Integer next = first + second;
+            fibSeries.add(next);
+            first = second;
+            second = next;
+        }
+        
+        return fibSeries;
+    }
+
+    // Optional: method to log the series to debug
+    public static void printFibonacci(Integer n) {
+        List<Integer> series = generateFibonacci(n);
+        System.debug('Fibonacci series up to ' + n + ' terms: ' + series);
+    }
+}
+
+
+
+To run this code in Salesforce (e.g., in Developer Console or Anonymous Apex):
+
+
+FibonacciGenerator.printFibonacci(10); // Replace 10 with any number of terms you want
