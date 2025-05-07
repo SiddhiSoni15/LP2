@@ -1,14 +1,9 @@
 
-#################################################################################################
-
-# Problem Statement:
 
 ''' Implement a solution for a Constraint Satisfaction Problem using Branch and Bound &
 Backtracking for n-queens problem or a graph coloring problem. '''
 
-#################################################################################################
 
-#<------------------------------- Input and Board Printing ------------------------------------>#
 
 N = int(input("\nEnter number of Queens : "))
 
@@ -168,3 +163,32 @@ if not found_bnb:
 print("\nThank You! (-_-)\n")
 
 #################################################################################################
+
+# Backtracking: Explores all possibilities for assigning values to variables and backtracks when a constraint is violated.
+
+# Branch and Bound: Prunes branches that cannot lead to a feasible solution.
+
+# python
+# Copy code
+# # Example for N-Queens backtracking solution
+# def solve_n_queens(n):
+#     def is_safe(board, row, col):
+#         for i in range(row):
+#             if board[i] == col or board[i] - i == col - row or board[i] + i == col + row:
+#                 return False
+#         return True
+
+#     def solve(board, row):
+#         if row == n:
+#             print(board)
+#             return True
+#         for col in range(n):
+#             if is_safe(board, row, col):
+#                 board[row] = col
+#                 if solve(board, row + 1):
+#                     return True
+#                 board[row] = -1
+#         return False
+
+#     solve([-1] * n, 0)
+# Explanation: The backtracking solution for the N-Queens problem tries placing queens one by one in each row, checking for conflicts, and backtracking when it finds an invalid configuration.
