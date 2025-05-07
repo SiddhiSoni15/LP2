@@ -1,43 +1,50 @@
-public class FibonacciGenerator {
-    
-    // Method to generate and return the Fibonacci series up to n terms
-    public static List<Integer> generateFibonacci(Integer n) {
-        List<Integer> fibSeries = new List<Integer>();
-        
-        if (n <= 0) {
-            return fibSeries; // return empty list for invalid input
-        }
-        
-        // Initialize the first two terms
-        Integer first = 0;
-        Integer second = 1;
-        
-        fibSeries.add(first);
-        if (n > 1) {
-            fibSeries.add(second);
-        }
-        
-        // Generate remaining terms
-        for (Integer i = 2; i < n; i++) {
-            Integer next = first + second;
-            fibSeries.add(next);
-            first = second;
-            second = next;
-        }
-        
-        return fibSeries;
+public class SimpleCalculator {
+
+   
+
+    // Method to add two numbers
+    public static Decimal add(Decimal a, Decimal b) {
+        return a + b;
     }
 
-    // Optional: method to log the series to debug
-    public static void printFibonacci(Integer n) {
-        List<Integer> series = generateFibonacci(n);
-        System.debug('Fibonacci series up to ' + n + ' terms: ' + series);
+    // Method to subtract two numbers
+    public static Decimal subtract(Decimal a, Decimal b) {
+        return a - b;
     }
+
+    // Method to multiply two numbers
+    public static Decimal multiply(Decimal a, Decimal b) {
+        return a * b;
+    }
+
+    // Method to divide two numbers with error handling
+    public static Decimal divide(Decimal a, Decimal b) {
+        if (b == 0) {
+            throw new MathException('Cannot divide by zero');
+        }
+        return a / b;
+    }
+
+    // Method to run and print all operations
+    public static void runCalculator(Decimal a, Decimal b) {
+        System.debug('Inputs: a = ' + a + ', b = ' + b);
+        System.debug('Addition: ' + add(a, b));
+        System.debug('Subtraction: ' + subtract(a, b));
+        System.debug('Multiplication: ' + multiply(a, b));
+        
+        try {
+            System.debug('Division: ' + divide(a, b));
+        } catch (MathException ex) {
+            System.debug('Error: ' + ex.getMessage());
+        }
+    }
+
+    // Custom exception for math errors
+    public class MathException extends Exception {}
+
+
 }
 
 
-
-To run this code in Salesforce (e.g., in Developer Console or Anonymous Apex):
-
-
-FibonacciGenerator.printFibonacci(10); // Replace 10 with any number of terms you want
+Output---
+SimpleCalculator.runCalculator(10, 5);
