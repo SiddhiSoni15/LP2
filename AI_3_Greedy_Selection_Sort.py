@@ -1,11 +1,6 @@
 
-#################################################################################################
-
-# Problem Statement:
-
 ''' Implement Greedy Search Algorithm for Selection Sort. '''
 
-#################################################################################################
 
 # Function to perform the Selection Sort based on user choice (Ascending / Descending)
 
@@ -22,7 +17,6 @@ def selection_sort(lst, order="asc"):
         print(f"\n After Pass {i + 1} : {lst}\n")
     return lst
 
-#<------------------------------------------------------------------------------
 
 # Driver Code
 def driver():
@@ -58,3 +52,22 @@ if __name__ == "__main__":
     driver()
 
 #################################################################################################
+# Greedy Algorithm: It chooses the local optimum at each step with the hope of finding the global optimum.
+
+# Selection Sort is a classic example of a greedy algorithm because it iteratively selects the minimum element and places it in the sorted array.
+
+# python
+# Copy code
+# def selection_sort(arr):
+#     for i in range(len(arr)):
+#         min_idx = i
+#         for j in range(i + 1, len(arr)):
+#             if arr[j] < arr[min_idx]:
+#                 min_idx = j
+#         arr[i], arr[min_idx] = arr[min_idx], arr[i]
+#     return arr
+# Explanation: It selects the smallest element in the unsorted portion and places it in the correct position.
+# In the Greedy Search framework, the algorithm makes the locally optimal choice at each step, hoping that this will lead to the globally optimal solution.
+
+# Selection Sort is a greedy algorithm in the sense that it repeatedly selects the smallest (or largest) element from the unsorted portion of the list and swaps it with the leftmost unsorted element. It’s simple and effective but not optimal in terms of time complexity compared to other algorithms like quicksort.
+# Explanation: The greedy approach here is to always choose the smallest unsorted element at each step, making a local optimum decision.
