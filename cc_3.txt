@@ -45,9 +45,15 @@ public class SimpleCalculator {
 
 
 
-//https://piyushaaa.blogspot.com/p/cloud-technology.html?m=1
 }
 
 
 Output---
 SimpleCalculator.runCalculator(10, 5);
+
+
+
+
+//https://github.com/GoogleCloudPlatform/python-docs-samples
+
+//https://piyushaaa.blogspot.com/p/cloud-technology.html?m=1
